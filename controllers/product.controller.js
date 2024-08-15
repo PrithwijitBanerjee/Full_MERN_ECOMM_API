@@ -24,10 +24,10 @@ exports.addNewProduct = async (req, res, next) => {
         pro_data.slug = slugify(pro_data?.name);
         if (req.files) {
             if (req.files.pro_image) {
-                pro_data.pro_image = `${config.app.baseUrl}:${config.app.apiPortNo}/products/${req.files.pro_image[0].filename}`;
+                pro_data.pro_image = `${config.app.baseUrl}/products/${req.files.pro_image[0].filename}`;
             }
             if (req.files.thumbnail_image) {
-                pro_data.thumbnail_image = req.files.thumbnail_image.map(file => `${config.app.baseUrl}:${config.app.apiPortNo}/products/${file.filename}`);
+                pro_data.thumbnail_image = req.files.thumbnail_image.map(file => `${config.app.baseUrl}/products/${file.filename}`);
             }
         }
         const { status, message, data } = await createProduct(pro_data, req.body.category);
@@ -123,10 +123,10 @@ exports.updateProductBySlug = async (req, res, next) => {
         }
         if (req.files) {
             if (req.files.pro_image) {
-                pro_update_data.pro_image = `${config.app.baseUrl}:${config.app.apiPortNo}/products/${req.files.pro_image[0].filename}`;
+                pro_update_data.pro_image = `${config.app.baseUrl}/products/${req.files.pro_image[0].filename}`;
             }
             if (req.files.thumbnail_image) {
-                pro_update_data.thumbnail_image = req.files.thumbnail_image.map(file => `${config.app.baseUrl}:${config.app.apiPortNo}/products/${file.filename}`);
+                pro_update_data.thumbnail_image = req.files.thumbnail_image.map(file => `${config.app.baseUrl}/products/${file.filename}`);
             }
         }
         const update = {

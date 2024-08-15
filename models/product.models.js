@@ -58,11 +58,11 @@ const productSchema = new mongoose.Schema({
     },
     pro_image: {
         type: String,
-        default: `${config.app.baseUrl}:${config.app.apiPortNo}/products/product-image-placeholder.png`
+        default: `${config.app.baseUrl}/products/product-image-placeholder.png`
     },
     thumbnail_image: {
         type: [String],
-        default: [`${config.app.baseUrl}:${config.app.apiPortNo}/products/product-image-placeholder.png`]
+        default: [`${config.app.baseUrl}/products/product-image-placeholder.png`]
     },
     brand: {
         type: String,

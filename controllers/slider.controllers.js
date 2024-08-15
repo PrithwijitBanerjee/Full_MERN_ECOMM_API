@@ -17,7 +17,7 @@ const { default: slugify } = require('slugify');
 exports.addSlider = async (req, res, next) => {
     try {
         const { title, desc } = req.body;
-        const slider_image = `${config.app.baseUrl}:${config.app.apiPortNo}/sliders/${req.file.filename}`;
+        const slider_image = `${config.app.baseUrl}/sliders/${req.file.filename}`;
         const { status, message, sliderDoc } = await createNewSlider(title, desc, slider_image);
         successResponseHandler(res, {
             status,
@@ -55,7 +55,7 @@ exports.editSingleSlider = async (req, res, next) => {
             }
         }
         if (req.file) {
-            updated_data.slider_image = `${config.app.baseUrl}:${config.app.apiPortNo}/sliders/${req.file.filename}`;
+            updated_data.slider_image = `${config.app.baseUrl}/sliders/${req.file.filename}`;
         }
         if (updated_data.title) {
             updated_data.slug = slugify(updated_data.title);

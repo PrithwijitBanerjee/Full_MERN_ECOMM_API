@@ -63,7 +63,7 @@ const userSchema = new Schema({
     },
     avatar_url: {
         type: String,
-        default: `${config.app.baseUrl}:${config.app.apiPortNo}/users/male-user-placeholder.png`,
+        default: `${config.app.baseUrl}/users/male-user-placeholder.png`,
     },
     // avatar_url: {
     //     type: Buffer,
