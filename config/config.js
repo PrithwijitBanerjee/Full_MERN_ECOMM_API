@@ -5,7 +5,7 @@ const dev = {
     app: {
         apiUrl: process.env.API_URL,
         apiEnviroment: process.env.NODE_ENV,
-        apiPortNo: process.env.NODE_ENV === "production" ? 3002 : (process.env.NODE_ENV === "developement" ? process.env.PORT : 6000),
+        apiPortNo: process.env.NODE_ENV === "production" ? 3002 : (process.env.NODE_ENV === "developement" ? process.env.PORT : process.env.LOCAL_PORT),
         baseUrl: process.env.BASE_URL,
         jwtActivationKey: process.env.JWT_ACTIVATION_KEY ? process.env.JWT_ACTIVATION_KEY : "",
         jwtAcessKey: process.env.JWT_ACCESS_KEY ? process.env.JWT_ACCESS_KEY : "",

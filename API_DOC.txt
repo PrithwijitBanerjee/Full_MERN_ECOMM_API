@@ -163,7 +163,7 @@
 
     b. Get all categories list (Public API)
 
-        api base url:  hhttp://localhost:5000/api/v1/categories/list (Public API)
+        api base url:  http://localhost:5000/api/v1/categories/list (Public API)
 
         requested method: GET
         requested params: None
@@ -172,7 +172,7 @@
 
     c. Get single category by :slug as id (Public API)
 
-        api base url:  hhttp://localhost:5000/api/v1/categories/list/:slug (Public API)
+        api base url:  http://localhost:5000/api/v1/categories/list/:slug (Public API)
 
         requested method: GET
         requested params: slug
@@ -181,7 +181,7 @@
 
     d. Delete single category by :slug as id (Private API -> Only Admin)
 
-        api base url:  hhttp://localhost:5000/api/v1/categories/del/:slug (Private API -> Only Admin)
+        api base url:  http://localhost:5000/api/v1/categories/del/:slug (Private API -> Only Admin)
 
         requested method: DELETE
         requested params: slug
@@ -190,7 +190,7 @@
 
     e. Update single category by :slug as id (Private API -> Only Admin)
 
-        api base url:  hhttp://localhost:5000/api/v1/categories/edit/:slug (Private API -> Only Admin)
+        api base url:  http://localhost:5000/api/v1/categories/edit/:slug (Private API -> Only Admin)
 
         requested method: PUT or, PATCH
         requested params: slug
