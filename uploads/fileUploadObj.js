@@ -38,11 +38,9 @@ function fileFilter(req, file, cb) {
     if (!config.app.allowedFileTypes.includes(extension.substring(1))) {
         return cb(createError(400, 'Only *.jpg or, *.jpeg or, *.png or, *.gif files are allowed !!!'), false);
     }
-
     if (file?.fieldname) {
         return cb(null, true);
     }
-
 }
 
 // function fileFilter(req, file, cb) {

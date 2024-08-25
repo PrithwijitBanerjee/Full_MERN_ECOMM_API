@@ -69,7 +69,11 @@ app.use(morgan('dev')); // for identify incoming request ... logger
 
 
 /** disable CORS to tell express server to share API data to clients from different base url with different port no. **/
-app.use(cors({ origin: [config.app.clientUrl], }));
+app.use(cors({
+    origin: [config.app.clientUrl],
+    credentials: true  // Allow credentials for (cookies, etc.)
+
+}));
 
 // to tell express server to share its static resources to the client 
 app.use(express.static(__dirname + '/public/images/'));

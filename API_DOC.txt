@@ -35,7 +35,7 @@
         requested method: POST
         requested params: None
         query parameters: None
-        requested body: name, email, phoneNo, password, address, isAdmin(optional), isBannedUsr, avatar_url(optional field)
+        requested body: name, email, phoneNo, password, address, isAdmin(optional), isBannedUsr(optional), avatar_url(optional field)
 
     b. Get all users except Admin people including search and pagination only Admin can access it (Private Route -> Only Admin can access it)
 
@@ -57,7 +57,7 @@
 
     d. Delete single user by :id only Admin can access it (Private Route -> Only Admin can access it)
 
-        api base url:  http://localhost:5000/api/v1/users/all_users/:id (Private API -> Only Admin can access it)
+        api base url:  http://localhost:5000/api/v1/users/del/:id (Private API -> Only Admin can access it)
 
         requested method: DELETE
         requested params: id
@@ -208,7 +208,7 @@
         requested method: POST
         requested params: None
         query parameters: None
-        requested body: desc, price, qty, brand, category, sold(optional field), pro_image(optional field), thumbnail_image(optional field), shipping_charge (optional field)
+        requested body: name, desc, price, qty, brand, category, sold(optional field), pro_image(optional field), thumbnail_image(optional field), shipping_charge (optional field)
 
     b. Get all list of products with pagination (Public API)
 
@@ -294,7 +294,6 @@
         requested params: slug
         query parameters: None
         requested body: title, desc, slider_image
-
 
 
 7. <-------------------------------------------------Carts Route/ API Endpoints------------------------------------->

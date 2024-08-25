@@ -12,9 +12,11 @@ const { successResponseHandler } = require('../helpers/responseHandler');
 exports.placedOrder = async (req, res, next) => {
     try {
         const cartData = await cartServices.cart();
+
         if (!cartData.items.length || !cartData) {
             throw createError(400, 'Can not placed order, No item in the cart !!!');
         }
+
         const orderData = {
             items: cartData.items,
             shippingAddress1: req.body.shippingAddress1,

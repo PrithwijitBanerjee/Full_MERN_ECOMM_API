@@ -16,7 +16,7 @@ exports.isLoggedIn = async (req, res, next) => {
         const decoded = await jwt.verify(access_token, config.app.jwtAcessKey);
         if (!decoded) {
             throw createError(401, 'Invalid Access token, please login again !!!');
-        }
+        }        
         req.decoded = decoded;
         next();
     } catch (error) {

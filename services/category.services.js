@@ -19,7 +19,7 @@ exports.createNewCategory = async name => {
 
 exports.fetchedAllCategories = async () => {
     try {
-        const categoryList = await CategoryModel.find({}).select('name slug products').populate("products", "-_id").lean().exec(); // here lean() is used to convert from category mongoDb document to JS object ...
+        const categoryList = await CategoryModel.find({}).select('name slug products').populate("products").lean().exec(); // here lean() is used to convert from category mongoDb document to JS object ...
         if (!categoryList?.length) {
             return {
                 message: 'No Category present !!!',
@@ -37,7 +37,7 @@ exports.fetchedAllCategories = async () => {
 
 exports.fetchedSingleCategory = async slug => {
     try {
-        const category = await CategoryModel.findOne({ slug }).select('name slug products').populate("products", "-_id").lean().exec(); // here lean() is used to convert from category mongoDb document to JS object ...
+        const category = await CategoryModel.findOne({ slug }).select('name slug products').populate("products").lean().exec(); // here lean() is used to convert from category mongoDb document to JS object ...
         if (!category) {
             return {
                 status: 404,

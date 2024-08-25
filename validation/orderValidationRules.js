@@ -1,10 +1,6 @@
 const { body } = require('express-validator');
 
 exports.orderValidationRules = () => [
-    // Validate items array
-    body('items')
-        .isArray({ min: 1 }).withMessage('Items must be an array with at least one order item.'),
-
     // Validate shippingAddress1 (optional, but if present, must be a string)
     body('shippingAddress1')
         .notEmpty()
@@ -37,11 +33,6 @@ exports.orderValidationRules = () => [
         .notEmpty().withMessage('Phone number is required.')
         .isNumeric().withMessage('Phone number must be a valid number.')
         .isLength({ min: 10 }).withMessage('Phone number must be at least 10 characters long.'),
-
-    // Validate totalAmount
-    body('totalAmount')
-        .notEmpty().withMessage('Total amount is required.')
-        .isFloat({ gt: 0 }).withMessage('Total amount must be a positive number.'),
 
     // Validate status (optional, but if present, must be one of the enum values)
     body('status')

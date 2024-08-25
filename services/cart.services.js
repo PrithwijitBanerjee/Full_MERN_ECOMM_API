@@ -6,7 +6,7 @@ exports.cart = async () => {
     try {
         const carts = await CartModel.find({}).populate({
             path: 'items.productId',
-            select: "_id name price qty"
+            select: "_id name price qty pro_image"
         }); 
         return carts[0];
     } catch (error) {
